@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<button class="button button-success">Success</button>
+	<button class="button button-error">Error</button>
+
+	<div class="modal">
+		<div class="modal-header">
+			<div class="title">Title</div>
+			<div class="close">
+				<i class="fas fa-times"></i>
+			</div>
+		</div>
+		<div class="modal-body">
+			<svg 
+			id="svg"
+			version="1.1"
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="-7 -2 139 139"
+			>
+			<circle class="path circle"
+			fill="none"
+			stroke="#0f3443"
+			stroke-width="10"
+			stroke-miterlimit="10"
+			cx="60"
+			cy="65.1"
+			r="62.1"
+			/>
+
+			<polyline class="path check"
+			fill="none"
+			stroke="#0f3443"
+			stroke-width="10"
+			stroke-linecap="round"
+			stroke-miterlimit="10"
+			points="100.2,40.2 51.5,88.8 29.8,67.5 "
+			/>
+		</svg>
+		
+		<!-- Sorry! I'm still working on Error SVG -->
+	</div>
+</div>
+
+<script type="text/javascript">
+	let buttonSuccess = document.querySelector('.button-success');
+	let buttonError = document.querySelector('.button-error');
+	let modal = document.querySelector('.modal');
+	let modalHeader = document.querySelector('.modal-header');
+	let title = document.querySelector('.title');
+	let close = document.querySelector('.close');
+
+	buttonSuccess.addEventListener('click', () => {
+		title.textContent = 'Success';
+		modalHeader.classList.add('header-success');
+		modal.classList.add('active');
+	});
+
+	buttonError.addEventListener('click', () => {
+		title.textContent = 'Error';
+		modalHeader.classList.add('header-error');
+		modal.classList.add('active');
+	});
+
+	close.addEventListener('click', () => {
+		modal.classList.remove('active');
+		modalHeader.classList.remove('header-success');
+		modalHeader.classList.remove('header-error');
+	});
+</script>
+
+</body>
+</html>

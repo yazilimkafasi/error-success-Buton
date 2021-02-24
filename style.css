@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  border-size: border-box;
+}
+
+html, body {
+  height: 100vh;
+  background: #666666;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  padding: 25px 75px;
+  width: 300px;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  font-size: 25px;
+  letter-spacing: 2px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.button-success {
+  background-color: #0f3443;
+  margin-right: 15px;
+}
+
+.button-error {
+  background-color: #190A05;
+}
+
+svg {
+  width: 350px;
+}
+
+.modal {
+  height: 600px;
+  width: 600px;
+  background-color: #ffffff;
+  border-radius: 25px;
+  box-shadow: 10px 0 50px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  visibility: hidden;
+  overflow: hidden;
+  opacity: 0;
+  transition: visibility 0.5s, opacity 0.5s;
+}
+
+.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-header {
+  height: 100px;
+  padding: 0 20px 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  color: #ffffff;
+}
+
+.header-success {
+  background: linear-gradient(90deg, #34e89e, #0f3443);
+}
+
+.header-error {
+  background: linear-gradient(90deg, #870000, #190A05);
+}
+
+.title {
+  flex: 50%;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.close {
+  flex: 50%;
+  text-align: right;
+  cursor: pointer;
+}
+
+.fa-times {
+  font-size: 25px;
+}
+
+.modal-body {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Success SVG*/
+.active .path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+}
+
+.active .path.circle {
+  animation: circle 0.9s ease-in-out;
+}
+
+.active .path.check {
+  stroke-dashoffset: -100;
+  animation: check 0.9s .40s ease-in-out forwards;
+}
+
+@keyframes circle {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900;
+  }
+}
+/*Success SVG End*/
